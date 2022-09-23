@@ -69,43 +69,65 @@
  */
 
 
-/* 
-查看所有的全局配置项
-git config --list --global
+/*
+1.git config --list --global 查看所有的全局配置项
 // user.name=liuwusuile
 // user.email=18052019783@163.com
 // http.sslverify=false
 
-查看指定的全局配置项
+2.查看指定的全局配置项
 git config user.name
 // liuwusuile
-
 git config user.email
 // 18052019783@163.com
 
-git help config    config帮助手册 浏览器打开
-git config -h      终端打开
+3.git help config  config帮助手册 浏览器打开
+  git config -h      终端打开
 
-git status 显示文件的状态
-git status -s 精简形式显示 -s等同于--short
-// ?? index.html       ??表示未跟踪的
+4.git status        显示文件的状态
+5.git status -s     精简形式显示  -s等同于--short
+// ?? index.html    ??表示未跟踪的
 // ?? node.js
 
-git add index.html     开始跟踪一个文件
+6.git add index.html 开始跟踪一个文件
 // 新添加到暂存区的文件前面有绿色的A标记
 
-$ git commit -m '新建了index和node这两个文件'     提交更新文件
+7.git commit -m '新建了index和node这两个文件'  提交更新文件
 
-$ git status
+git status
 // On branch master
 // nothing to commit, working tree clean 证明所有的文件都处于“未修改状态” 没有任何文件要提交
 
-撤销对文件的修改 危险性较高 就是用git仓库中的内容覆盖工作区中指定的文件
-git checkout -- index.html 
+8.git checkout -- index.html  撤销对文件的修改 
+// 危险性较高 就是用git仓库中的内容覆盖工作区中指定的文件
 
-向暂存区一次性添加多个文件
-git add.
+9.git add.  向暂存区一次性添加多个文件
+
+git status -s
+// M index.html
+// ?? index.css
+// ?? index.js
+
+git add .
+
+git status -s
+// A  index.css
+// M  index.html
+// A  index.js
+都是绿色 表示都放到暂存区里面了
+A 表示新加入暂存区的文件
+M表示被修改了也加入了暂存区的文件
+
+10.git reset HEAD index.html   移除暂存的文件
+git reset HEAD .   移除暂存区所有的文件
+
+11.git commit -a -m "描述推送消息"  跳过使用暂存区 跳过git add步骤
+
+
+
 */
+
+
 // 绿色A标记 新添加到暂存区的文件前面有绿色的A
 // 红色M标记 已跟踪的文件的内容发生了变化 已修改 但还没有放到暂存区 红色M
 // 绿色M标记 文件已修改 且已放入暂存区
