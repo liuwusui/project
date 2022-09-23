@@ -88,7 +88,7 @@ git config -h      终端打开
 
 git status 显示文件的状态
 git status -s 精简形式显示 -s等同于--short
-// ?? index.html  ??表示未跟踪的
+// ?? index.html       ??表示未跟踪的
 // ?? node.js
 
 git add index.html     开始跟踪一个文件
@@ -100,5 +100,12 @@ $ git status
 // On branch master
 // nothing to commit, working tree clean 证明所有的文件都处于“未修改状态” 没有任何文件要提交
 
-*/
+撤销对文件的修改 危险性较高 就是用git仓库中的内容覆盖工作区中指定的文件
+git checkout -- index.html 
 
+向暂存区一次性添加多个文件
+git add.
+*/
+// 绿色A标记 新添加到暂存区的文件前面有绿色的A
+// 红色M标记 已跟踪的文件的内容发生了变化 已修改 但还没有放到暂存区 红色M
+// 绿色M标记 文件已修改 且已放入暂存区
