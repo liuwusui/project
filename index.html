@@ -10,7 +10,7 @@
 // 特点：git所有的操作近乎都是在本地运行的（速度会很快）
 
 // 三个区域：工作区 暂存区 仓库
-// 三个状态：已修改modified 已暂存staged 已提交committed
+// 三个状态：已修改modified  已暂存staged  已提交committed
 
 // 流程：对文件进行修改->需要进行暂存->总的提交（本地提交，提交到仓库）
 
@@ -29,23 +29,76 @@
 //查看全局所有的配置项：git config --list --global
 
 // 获取帮助信息 git help config
-// git config -h
+//             git config -h
 
 // 使用 cls 可以清除之前输入的命令 清屏
 
 // 获取git仓库的两种方式
-// 1、可以将本地的某个文件夹转换成git仓库（需要执行git init命令 ） 不要在桌面弄
+// 1、可以将本地的某个文件夹转换成git仓库（需要执行git init命令 ）  不要在桌面弄
 // 2、可以直接从远程服务器克隆一份下来
 // 注意点：新建的工程不要有中文，名称中间不要有空格等特殊字符
+
 // 文件所处的状态：
 // 1.未跟踪的 untracked(当前文件还没有被git所管理 新建的文件)
 // 2.未修改的 unmodified
-// 3.已修改 modified
-// 4.已暂存 staged
+// 3.已修改   modified
+// 4.已暂存   staged
 
-// 查看文件的状态：git status 文件处于什么状态 都能看到
-// 精简的命令：git status -s ??标识当前文件处于未被跟踪的状态
+// 查看文件的状态:  git status 文件处于什么状态 都能看到
+// 精简的命令：     git status -s   ??标识当前文件处于未被跟踪的状态
+// 跟踪新文件：     git add 你要跟踪的文件的名称(可以使用tab键，快速补齐路径)(使用上下左右的上键，可以快速恢复到上一次输入的命令)
+// 提交更新文件:    git commit -m '此次提交的记录信息'  (-m 后面的提交信息，一定不能丢)
 
-// 跟踪新文件：git add 你要跟踪的文件的名称(可以使用tab键，快速补齐路径)(使用上下左右的上键，可以快速恢复到上一次输入的命令)
-// 提交更新文件:git commit -m '此次提交的记录信息' (-m 后面的提交信息，一定不能丢)
-哈哈哈哈哈哈哈哈哈哈哈ggggggggggggggggggggggggggggggg
+// 对已经添加到暂存区的文件，又进行修改了的话，再次查看文件状态，依然属于已修改状态，需要再次添加到暂存区（需要 git add 文件名称）
+
+/**
+ * add 命令的作用：
+ * 1、将未被跟踪的文件，添加到暂存区
+ * 2、将已经处于跟踪的文件又做了修改的情况下，再次添加到暂存区
+ * 3、将冲突文件解决完之后，需要再次将文件状态标识为已解决，添加到暂存区
+ */
+
+/**
+ * 回顾git命令第一天的前半天
+ *
+ * git init - 在本地初始化一个 git 仓库（会生成一个 .git 的隐藏文件）
+ * git add 你要添加的文件 - 把文件放到到暂存区里面
+ * git commit -m '提交的描述信息' - 提交更新文件
+ *
+ * 查看文件状态：git status
+ */
+
+
+/* 
+查看所有的全局配置项
+git config --list --global
+// user.name=liuwusuile
+// user.email=18052019783@163.com
+// http.sslverify=false
+
+查看指定的全局配置项
+git config user.name
+// liuwusuile
+
+git config user.email
+// 18052019783@163.com
+
+git help config    config帮助手册 浏览器打开
+git config -h      终端打开
+
+git status 显示文件的状态
+git status -s 精简形式显示 -s等同于--short
+// ?? index.html  ??表示未跟踪的
+// ?? node.js
+
+git add index.html     开始跟踪一个文件
+// 新添加到暂存区的文件前面有绿色的A标记
+
+$ git commit -m '新建了index和node这两个文件'     提交更新文件
+
+$ git status
+// On branch master
+// nothing to commit, working tree clean 证明所有的文件都处于“未修改状态” 没有任何文件要提交
+
+*/
+
