@@ -101,7 +101,7 @@ git status
 8.git checkout -- index.html  撤销对文件的修改 
 // 危险性较高 就是用git仓库中的内容覆盖工作区中指定的文件
 
-9.git add.  向暂存区一次性添加多个文件
+9.git add .  向暂存区一次性添加多个文件
 
 git status -s
 // M index.html
@@ -119,9 +119,9 @@ A 表示新加入暂存区的文件
 M表示被修改了也加入了暂存区的文件
 
 10.git reset HEAD index.html   移除暂存的文件
-git reset HEAD .   移除暂存区所有的文件
+git reset HEAD .   移除暂存区所有的文件 只有处于还未提交的状态，才能撤回到未跟踪的状态
 
-11.git commit -a -m "描述推送消息"  跳过使用暂存区 跳过git add步骤
+11.git commit -a -m "描述推送消息"  (常用)跳过使用暂存区 跳过git add步骤
 
 12.从 Git 仓库中移除文件的方式有两种：
 ① 从 Git 仓库和工作区中同时移除对应的文件
